@@ -1,0 +1,25 @@
+{
+  "buildCommand": "npm run build",
+  "devCommand": "npm run start",
+  "installCommand": "npm install",
+  "framework": "create-react-app",
+  "outputDirectory": "build",
+  "env": {
+    "REACT_APP_NAME": "Samflo Consultations"
+  },
+  "github": {
+    "enabled": true,
+    "autoAlias": true
+  },
+  "headers": [
+    {
+      "source": "/api/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-cache"
+        }
+      ]
+    }
+  ]
+}
