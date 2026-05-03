@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Plus, Trash2, Download, TrendingUp, TrendingDown, Settings, Users, FileText, Target, Calendar, Eye, EyeOff, Edit2, Save, X } from 'lucide-react';
-import { BarChart, Bar, PieChart, Pie, Cell, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, LineChart, Line, Legend } from 'recharts';
+import { Plus, Trash2, Download, TrendingUp, Settings, Users, FileText, Target, Calendar } from 'lucide-react';
+import { BarChart, Bar, PieChart, Pie, Cell, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from 'recharts';
 
 export default function SamfloConsultations() {
   const [activeTab, setActiveTab] = useState('dashboard');
@@ -59,8 +59,7 @@ export default function SamfloConsultations() {
   const taxCategories = ['Standard (15%)', 'Reduced (10%)', 'Exempt', 'Zero Rated'];
 
   useEffect(() => {
-    const loadData = async () => {
-      try {
+  const loadData = async () => {
         const [txResult, invResult, clientResult, budgetResult, recurResult] = await Promise.all([
           window.storage?.get?.('samflo-transactions') || Promise.resolve(null),
           window.storage?.get?.('samflo-invoices') || Promise.resolve(null),
